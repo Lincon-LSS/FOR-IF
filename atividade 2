@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class Divisao {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        int n = 0;
+        
+        System.out.println("Escreva um numero inteiro (1 a 10): ");
+        n = sc.nextInt(); 
+        
+        for (int i = n; i<11; i++){
+            System.out.println(i + " Patinhos foram passear Alem das montanhas Para brincar A mamae gritou: Qua, qua, qua,qua.Mas so " + i + " patinhos voltaram de la");
+            if (i == 10){
+                System.out.println("A mamae patinha foi procurar Alem das montanhas Na beira do mar A mamae gritou: Qua, qua, qua, qua E os " + i + " patinhos voltaram de la");
+            }
+        }
+    }
+}
