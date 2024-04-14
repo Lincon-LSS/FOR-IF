@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class data {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int dia = 0;
+        int meses = 0;
+        int ano = 0;
+
+
+        System.out.println("Escreva quantos anos você tem: ");
+        ano = sc.nextInt();
+        System.out.println("Quantos meses vc tem: ");
+        dia = sc.nextInt();
+        System.out.println("Quantos dias vc tem: ");
+        meses = sc.nextInt();
+
+        int emdias = dia + meses * 30 + ano * 365;
+        System.out.println("Você tem: " +emdias+ " dias de vida" );
+
+
+    }
+}
