@@ -1,0 +1,68 @@
+public class Produto {
+    // Atributos privados
+    private int codigo;
+    private String descricao;
+    private double preco;
+    private int quantidadeEmEstoque;
+
+    public Produto(int codigo, String descricao, double preco, int quantidadeEmEstoque) {
+        this.codigo = codigo;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.quantidadeEmEstoque = quantidadeEmEstoque;
+    }
+    
+    public int getCodigo() {
+        return codigo;
+    }
+    
+    public String getDescricao() {
+        return descricao;
+    }
+    
+    public double getPreco() {
+        return preco;
+    }
+    
+    public int getQuantidadeEmEstoque() {
+        return quantidadeEmEstoque;
+    }
+    
+    public void adicionarEstoque(int quantidade) {
+        if (quantidade > 0) {
+            quantidadeEmEstoque += quantidade;
+            System.out.println(quantidade + " unidades adicionadas ao estoque do produto " + descricao);
+        } else {
+            System.out.println("Quantidade inválida para adicionar ao estoque.");
+        }
+    }
+
+    public void removerEstoque(int quantidade) {
+        if (quantidade > 0) {
+            if (quantidade <= quantidadeEmEstoque) {
+                quantidadeEmEstoque -= quantidade;
+                System.out.println(quantidade + " unidades removidas do estoque do produto " + descricao);
+            } else {
+                System.out.println("Estoque insuficiente para remover a quantidade solicitada.");
+            }
+        } else {
+            System.out.println("Quantidade inválida para remover do estoque.");
+        }
+    }
+}
+__________________________________________________________________________________________
+public class ProdutoTeste {
+    public static void main(String[] args) {
+
+        Produto produto1 = new Produto(1, "Camiseta", 29.99, 50);
+        
+        System.out.println("Código do produto: " + produto1.getCodigo());
+        System.out.println("Descrição: " + produto1.getDescricao());
+        System.out.println("Preço: R$" + produto1.getPreco());
+        System.out.println("Quantidade em estoque: " + produto1.getQuantidadeEmEstoque());
+        
+        produto1.adicionarEstoque(20);
+        produto1.removerEstoque(10);
+        produto1.removerEstoque(100); // Tentativa de remover mais do que o estoque disponível
+    }
+}
