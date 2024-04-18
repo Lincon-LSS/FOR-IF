@@ -1,0 +1,68 @@
+public class Carro {
+    // Atributos
+    private String marca;
+    private String modelo;
+    private int ano;
+    private String cor;
+    private double velocidade;
+    
+
+    public Carro(String marca, String modelo, int ano, String cor) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+        this.cor = cor;
+        this.velocidade = 0;
+    }
+    
+  
+    public void acelerar(double aumento) {
+        this.velocidade += aumento;
+    }
+    
+    public void frear(double reducao) {
+        this.velocidade -= reducao;
+        if (this.velocidade < 0) {
+            this.velocidade = 0;
+        }
+    }
+    
+
+    public String getMarca() {
+        return marca;
+    }
+    
+    public String getModelo() {
+        return modelo;
+    }
+    
+    public int getAno() {
+        return ano;
+    }
+    
+    public String getCor() {
+        return cor;
+    }
+    
+    public double getVelocidade() {
+        return velocidade;
+    }
+}
+_____________________________________________________________
+public class CarroTeste {
+    public static void main(String[] args) {
+        Carro meuCarro = new Carro("Toyota", "Corolla", 2022, "Preto");
+        
+        System.out.println("Marca: " + meuCarro.getMarca());
+        System.out.println("Modelo: " + meuCarro.getModelo());
+        System.out.println("Ano: " + meuCarro.getAno());
+        System.out.println("Cor: " + meuCarro.getCor());
+        System.out.println("Velocidade inicial: " + meuCarro.getVelocidade());
+        
+        meuCarro.acelerar(50); 
+        System.out.println("Velocidade após acelerar: " + meuCarro.getVelocidade());
+        
+        meuCarro.frear(20);
+        System.out.println("Velocidade após frear: " + meuCarro.getVelocidade());
+    }
+}
